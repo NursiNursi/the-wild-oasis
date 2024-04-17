@@ -46,7 +46,14 @@ const Discount = styled.div`
 `;
 
 function CabinRow({ cabin }) {
-  const { id: cabinId, name, maxCapacity, regularPrice, discount, img } = cabin;
+  const {
+    id: cabinId,
+    name,
+    maxCapacity,
+    regularPrice,
+    discount,
+    image,
+  } = cabin;
 
   const queryClient = useQueryClient();
 
@@ -61,9 +68,11 @@ function CabinRow({ cabin }) {
     onError: (err) => toast.error(err.message),
   });
 
+  console.log(image);
+
   return (
     <TableRow role="row">
-      <Img src={img} />
+      <Img src={image} />
       <Cabin>{name}</Cabin>
       <div>Fits up to {maxCapacity}</div>
       <Price>{formatCurrency(regularPrice)}</Price>
