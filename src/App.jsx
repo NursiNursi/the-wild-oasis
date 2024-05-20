@@ -23,7 +23,7 @@ const queryClient = new QueryClient({
   },
 });
 
-console.log(queryClient);
+// console.log(queryClient);
 
 function App() {
   return (
